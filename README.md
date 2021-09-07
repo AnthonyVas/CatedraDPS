@@ -1,11 +1,11 @@
 # Proyecto de catedra
 Creado para alojar el proyecto de la catedra de la materia Diseño y Programacion de Software Multiplataforma.
 # Integrantes
-Grupo: **02T**
-Anthony Alexander Vásquez Iraheta-VI180187
-Rodrigo Ernesto Hernández Rivas-HR132106
-Williams Ernesto Amaya Moreno-AM180695
-Giovanny Misael Abrego Herrera-AH132090
+Grupo: **02T**  
+Anthony Alexander Vásquez Iraheta-VI180187  
+Rodrigo Ernesto Hernández Rivas-HR132106  
+Williams Ernesto Amaya Moreno-AM180695  
+Giovanny Misael Abrego Herrera-AH132090  
 # Trello
 https://trello.com/b/Kaal7hhH/proyectocatedra
 # Licencia
