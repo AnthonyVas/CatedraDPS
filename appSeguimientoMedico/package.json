@@ -10,6 +10,8 @@
     "lint": "eslint ."
   },
   "dependencies": {
+    "@react-native-google-signin/google-signin": "^7.0.1",
+    "expo-google-sign-in": "^9.2.1",
     "react": "17.0.2",
     "react-native": "0.66.0",
     "react-native-elements": "^3.4.2",
