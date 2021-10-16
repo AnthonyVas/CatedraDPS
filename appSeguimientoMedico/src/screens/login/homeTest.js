@@ -16,12 +16,14 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 // console.log(Icon);
 // const Stack = createNativeStackNavigator();
 
-const login = ({navigation}) => {
+const login = ({navigation, route}) => {
+    const {correo, nombre} = route.params;
     const [text, setText] = React.useState('');
     return (
 
         <View>
-            <Text>This is America</Text>
+            <Text>Correo: {correo}</Text>
+            <Text>Nombre: {nombre}</Text>
             {/* 
             <Button title={'Sign in with Google'} onPress={() => {
                 GoogleSignin.configure({
@@ -49,7 +51,7 @@ const login = ({navigation}) => {
                 signIn()
             }} /> */}
 
-            <Button title={'Clear cache'} onPress={() => {
+            <Button title={'Cerrar sesion'} onPress={() => {
                 GoogleSignin.configure({
                     androidClientId: '801356307136-dfdj7hnung2cvdh5ji9svmsikmq6mb45.apps.googleusercontent.com',
                     // iosClientId: 'ADD_YOUR_iOS_CLIENT_ID_HERE',

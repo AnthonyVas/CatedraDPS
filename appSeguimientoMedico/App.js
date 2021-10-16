@@ -22,7 +22,11 @@ export default function App() {
             ),
         }} /> */}
         <Stack.Screen name="homeTest" component={homeTest} />
-        <Stack.Screen name="login" component={login} />
+        <Stack.Screen
+         name="login"
+         component={login} 
+         options={{ title: 'Overview', headerShown: false }}
+         />
     </Stack.Navigator>
 </NavigationContainer>
     // <Login></Login>
