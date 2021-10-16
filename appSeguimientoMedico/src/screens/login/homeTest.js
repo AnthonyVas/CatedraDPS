@@ -9,40 +9,20 @@ import {
     statusCodes,
 } from '@react-native-google-signin/google-signin';
 import { NavigationContainer } from '@react-navigation/native';
-import homeTest from './homeTest';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
+
 
 // import * as Google from 'expo-google-sign-in';
 // console.log(Icon);
-const Stack = createNativeStackNavigator();
+// const Stack = createNativeStackNavigator();
 
-const login = ({ navigation }) => {
+const login = ({navigation}) => {
     const [text, setText] = React.useState('');
     return (
 
         <View>
-            <View style={styles.imageContainer} >
-                <Image
-                    style={styles.image}
-                    source={require('../../imgs/logosplash.png')}
-                >
-
-                </Image>
-            </View>
-            <View style={styles.container}>
-                <TextInput
-                    label="Usuario/Correo"
-                    value={text}
-                    onChangeText={text => setText(text)}
-                />
-                <TextInput
-                    label="Contraseña"
-                    value={text}
-                    onChangeText={text => setText(text)}
-                    style={styles.contra}
-                />
-            </View>
-
+            <Text>This is America</Text>
+            {/* 
             <Button title={'Sign in with Google'} onPress={() => {
                 GoogleSignin.configure({
                     androidClientId: '801356307136-dfdj7hnung2cvdh5ji9svmsikmq6mb45.apps.googleusercontent.com',
@@ -53,9 +33,6 @@ const login = ({ navigation }) => {
                         await GoogleSignin.hasPlayServices();
                         const userInfo = await GoogleSignin.signIn();
                         //If login is successful you'll get user info object in userInfo below I'm just printing it to console. You can store this object in a usestate or use it as you like user is logged in.
-                        setTimeout(() => navigation.navigate('homeTest'), 1000);
-                        // onPress={() => navigation.navigate('homeTest')}
-
                         console.log(userInfo)
                     } catch (error) {
                         if (error.code === statusCodes.SIGN_IN_CANCELLED) {
@@ -68,25 +45,34 @@ const login = ({ navigation }) => {
                             alert("Something unknown went wrong with Google sign in. " + error.message);
                         }
                     }
-                    // const 
                 }
                 signIn()
-                // signOut = async () => {
-                //     try {
-                //       await GoogleSignin.signOut();
-                //       this.setState({ user: null }); // Remember to remove the user from your app's state as well
-                //     } catch (error) {
-                //       console.error(error);
-                //     }
-                //   };
-                //   signOut()
+            }} /> */}
+
+            <Button title={'Clear cache'} onPress={() => {
+                GoogleSignin.configure({
+                    androidClientId: '801356307136-dfdj7hnung2cvdh5ji9svmsikmq6mb45.apps.googleusercontent.com',
+                    // iosClientId: 'ADD_YOUR_iOS_CLIENT_ID_HERE',
+                });
+                //    async function getCurrentUser()  {
+                //         const currentUser = await GoogleSignin.clearCachedAccessToken();
+                //         this.setState({ currentUser });
+                //       };
+                //       getCurrentUser()
+                async function signOut() {
+                    try {
+                        await GoogleSignin.signOut();
+                        // this.setState({ user: null }); // Remember to remove the user from your app's state as well
+                        setTimeout(() => navigation.navigate('login'), 1000);
+                    } catch (error) {
+                        console.error(error);
+                    }
+                };
+                signOut()
             }} />
-           
 
 
 
-
-           
         </View>
     );
 }
