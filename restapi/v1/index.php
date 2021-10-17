@@ -28,6 +28,34 @@ require_once '../include/DbEspecialidades.php';
 require_once '../include/DbDoctores.php';
 require_once '../include/DbCitas.php';
 
+/*
+#Rutas:
+    -OBTENER LOS DATOS DE LAS TABLAS
+        [servidor]/restapi/v1/gethorario
+        [servidor]/restapi/v1/getpaciente
+        [servidor]/restapi/v1/getespecialidad
+        [servidor]/restapi/v1/getdoctor
+        [servidor]/restapi/v1/getcita
+    -INSERTAR LOS DATOS DE LAS TABLAS
+        [servidor]/restapi/v1/puthorario
+        [servidor]/restapi/v1/putpaciente
+        [servidor]/restapi/v1/putespecialidad
+        [servidor]/restapi/v1/putdoctor
+        [servidor]/restapi/v1/putcita
+    -ELIMINAR LOS DATOS DE LAS TABLAS
+        [servidor]/restapi/v1/deletehorario
+        [servidor]/restapi/v1/deletepaciente
+        [servidor]/restapi/v1/deletespecialidad
+        [servidor]/restapi/v1/deletedoctor
+        [servidor]/restapi/v1/deletecita
+    -OBTENER LOS DATOS DE LAS TABLAS POR ID
+        [servidor]/restapi/v1/horario
+        [servidor]/restapi/v1/paciente
+        [servidor]/restapi/v1/specialidad
+        [servidor]/restapi/v1/doctor
+        [servidor]/restapi/v1/cita                
+
+*/
 /* INICIO API PROYECTO*/
     /*HORARIOS */
     $app->get('/gethorario', function(){
