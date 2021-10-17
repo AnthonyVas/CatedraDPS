@@ -8,8 +8,8 @@ import {
   } from '@react-navigation/drawer';
 
 //assets
-import logout from "../imagenes/logout.png"
-import userPic from "../imagenes/user.png"
+import logout from "../images/logout.png"
+import userPic from "../images/user1.png"
 
 
   
@@ -37,7 +37,7 @@ import userPic from "../imagenes/user.png"
           labelStyle={{}}
           style={styles.inNout}
           icon = {() =>(
-            <Image source={logout} style={{width:20, height:20, tintColor: "FFF"}}/>
+            <Image source={logout} style={{width:20, height:20, tintColor: "black"}}/>
           )}
         />
       </View>

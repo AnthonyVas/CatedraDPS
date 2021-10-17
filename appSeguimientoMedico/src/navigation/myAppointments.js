@@ -64,22 +64,24 @@ const DATA = [
 
 
 const Item = ({ item, onPress, backgroundColor, textColor }) => (
-  
-  <TouchableOpacity onPress={onPress} style={backgroundColor}>
-    <View style={{backgroundColor:'#8d99ae' ,mmarginRight:0, padding:0}}>
-      <Text style={[styles.getDate]}>{item.date}</Text>
-    </View>
-    <View style={styles.dateContainer}>
-      <Text style={[textColor, styles.dateTime]} >{item.appointmentTime}</Text>
-      <View style={styles.dateInfoContainer}>
-        <Text style={[textColor,styles.dateInfoText]}>{item.doctor}</Text>
-        <Text style={[textColor,styles.dateInfoText]}>{item.procedure}</Text>
-        <Text style={[textColor,styles.dateInfoText]}>{item.address}</Text>
-        <Text style={[textColor,styles.dateInfoText]}>{item.mail}</Text>
-        <Text style={[textColor,styles.dateInfoText]}>{item.phoneNumber}</Text>
+  <View style={{marginVertical: 8}}>
+    <TouchableOpacity onPress={onPress} style={backgroundColor}>
+      <View style={{backgroundColor:'#8d99ae' ,mmarginRight:0, padding:0}}>
+        <Text style={[styles.getDate]}>{item.date}</Text>
       </View>
-    </View>
-  </TouchableOpacity>
+      <View style={styles.dateContainer}>
+        <Text style={[textColor, styles.dateTime]} >{item.appointmentTime}</Text>
+        <View style={styles.dateInfoContainer}>
+          <Text style={[textColor,styles.dateInfoText]}>{item.doctor}</Text>
+          <Text style={[textColor,styles.dateInfoText]}>{item.procedure}</Text>
+          <Text style={[textColor,styles.dateInfoText]}>{item.address}</Text>
+          <Text style={[textColor,styles.dateInfoText]}>{item.mail}</Text>
+          <Text style={[textColor,styles.dateInfoText]}>{item.phoneNumber}</Text>
+        </View>
+      </View>
+    </TouchableOpacity>
+  </View>
+  
 );
 
 
@@ -116,7 +118,8 @@ const myAppointments = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    marginTop: StatusBar.currentHeight || 0,
+    marginTop: 0,
+  
   },
   item: {
     marginVertical: 8,
