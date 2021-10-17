@@ -107,7 +107,7 @@ const login = ({ navigation }) => {
                 </Icon.Button>
                 <View style={styles.registrarseContainer}>
                     <Text>
-                        ¿No tienes cuenta aun? Registrarme
+                        ¿No tienes cuenta aun? Registrarme!
                     </Text>
                 </View>
 
