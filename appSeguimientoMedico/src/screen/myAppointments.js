@@ -66,7 +66,7 @@ const DATA = [
 const Item = ({ item, onPress, backgroundColor, textColor }) => (
   <View style={{marginVertical: 8}}>
     <TouchableOpacity onPress={onPress} style={backgroundColor}>
-      <View style={{backgroundColor:'#8d99ae' ,mmarginRight:0, padding:0}}>
+      <View style={{backgroundColor:'#375D81' ,mmarginRight:0, padding:0}}>
         <Text style={[styles.getDate]}>{item.date}</Text>
       </View>
       <View style={styles.dateContainer}>
@@ -90,7 +90,7 @@ const myAppointments = () => {
   const [selectedId, setSelectedId] = useState(null);
 
   const renderItem = ({ item }) => {
-    const backgroundColor = item.id === selectedId ? "#3c6e71" : "#284b63";
+    const backgroundColor = item.id === selectedId ? "#3d7ab1" : "#ABC8E2";
     const color = item.id === selectedId ? 'white' : 'black';
 
     return (

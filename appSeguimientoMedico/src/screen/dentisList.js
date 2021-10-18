@@ -61,28 +61,31 @@ const DATA = [
 ];
 
 const Item = ({ item, onPress, backgroundColor, textColor }) => (
-  <TouchableOpacity onPress={onPress} style={[styles.item, backgroundColor]}>
-    
-    <View style={{flexDirection:'row', justifyContent:"space-between", padding:10}}>
-      <View>
-        <Text style={[styles.name, textColor]}>{item.name}</Text>
-        <Text style={[styles.info, textColor]}>{item.address}</Text>
-        <Text style={[styles.info, textColor]}>Horario de atencion: {item.business_hours}</Text>
-        <Text style= {textColor}>Contacto:</Text>
-        <Text style={[styles.info, textColor]}>{item.mail}</Text>
-        <Text style={[styles.info, textColor]}>{item.phoneNumber}</Text>
-      </View>
-      <Image source={item.img} style={{width:'24%', height:80, justifyContent:'center'}}/>
-    </View>
+  
 
-  </TouchableOpacity>
+    <TouchableOpacity onPress={onPress} style={[styles.item, backgroundColor]}>
+      
+      <View style={{flexDirection:'row', justifyContent:"space-between", padding:10}}>
+        <View>
+          <Text style={[styles.name, textColor]}>{item.name}</Text>
+          <Text style={[styles.info, textColor]}>{item.address}</Text>
+          <Text style={[styles.info, textColor]}>Horario de atencion: {item.business_hours}</Text>
+          <Text style= {textColor}>Contacto:</Text>
+          <Text style={[styles.info, textColor]}>{item.mail}</Text>
+          <Text style={[styles.info, textColor]}>{item.phoneNumber}</Text>
+        </View>
+        <Image source={item.img} style={{width:'24%', height:80, justifyContent:'center'}}/>
+      </View>
+
+    </TouchableOpacity>
+  
 );
 
 const dentistList = () => {
   const [selectedId, setSelectedId] = useState(null);
 
   const renderItem = ({ item }) => {
-    const backgroundColor = item.id === selectedId ? "#36558f" : "#96acb7";
+    const backgroundColor = item.id === selectedId ? "#3d7ab1" : "#ABC8E2";
     const color = item.id === selectedId ? 'white' : 'black';
 
     return (
@@ -92,6 +95,7 @@ const dentistList = () => {
         backgroundColor={{ backgroundColor }}
         textColor={{ color }}
       />
+      
     );
   };
 
@@ -110,7 +114,8 @@ const dentistList = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    marginTop: StatusBar.currentHeight || 0,
+    marginTop:0,
+    backgroundColor:'#E1E6FA'
   },
   item: {
     padding: 5,

@@ -2,6 +2,11 @@ import React, {uselayoutEffect, useState} from 'react';
 import { View, TouchableOpacity,StyleSheet,Text, Image} from 'react-native';
 
 import {
+  GoogleSignin,
+  statusCodes,
+} from '@react-native-google-signin/google-signin';
+
+import {
     DrawerContentScrollView,
     DrawerItemList,
     DrawerItem
@@ -37,17 +42,43 @@ import userPic from "../images/user1.png"
           labelStyle={{}}
           style={styles.inNout}
           icon = {() =>(
-            <Image source={logout} style={{width:20, height:20, tintColor: "black"}}/>
+            <Image source={logout} style={{width:20, height:20, tintColor: "black"}}
+          
+            onPress={() => {
+              GoogleSignin.configure({
+                  androidClientId: '801356307136-dfdj7hnung2cvdh5ji9svmsikmq6mb45.apps.googleusercontent.com',
+                  // iosClientId: 'ADD_YOUR_iOS_CLIENT_ID_HERE',
+              });
+              //    async function getCurrentUser()  {
+              //         const currentUser = await GoogleSignin.clearCachedAccessToken();
+              //         this.setState({ currentUser });
+              //       };
+              //       getCurrentUser()
+              async function signOut() {
+                  try {
+                      await GoogleSignin.signOut();
+                      // this.setState({ user: null }); // Remember to remove the user from your app's state as well
+                      setTimeout(() => navigation.navigate('login'), 1000);
+                  } catch (error) {
+                      console.error(error);
+                  }
+              };
+              signOut()
+          }}
+          />
           )}
+
         />
       </View>
     );
   }
 
+
+
   const styles = StyleSheet.create({
     container: {
       flex: 1,
-      backgroundColor: "white"
+      backgroundColor: "#C4D7ED"
     },
     inNout: {
       marginBottom:30

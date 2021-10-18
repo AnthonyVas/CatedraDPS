@@ -59,7 +59,8 @@ const bookAppointment = () => {
                 </View>
                 <View>
                     <Text style={styles.label}>Fecha:</Text>
-                    <Button title="Seleccionar Fecha" onPress={showDatePicker} />
+                    <Button title="Seleccionar Fecha" onPress={showDatePicker}
+                    color="#375D81" />
                     <DateTimePickerModal
                         isVisible={isDatePickerVisible}
                         mode="date"
@@ -69,12 +70,14 @@ const bookAppointment = () => {
                         headerTextIOS="Elige la fecha"
                         cancelTextIOS="Cancelar"
                         confirmTextIOS="Confirmar"
+                        
                     />
                     <Text>{date}</Text>
                 </View>
                 <View>
                     <Text style={styles.label}>Hora:</Text>
-                    <Button title="Seleccionar Hora" onPress={showTimePicker} />
+                    <Button title="Seleccionar Hora" onPress={showTimePicker} 
+                    color="#375D81" />
                     <DateTimePickerModal
                         isVisible={isTimePickerVisible}
                         mode="time"
@@ -107,7 +110,7 @@ const bookAppointment = () => {
 }
 const styles = StyleSheet.create({
     formulario: {
-        backgroundColor: '#FFF',
+        backgroundColor: '#E1E6FA',
         paddingHorizontal: 20,
         paddingVertical: 10,
         flex: 1
@@ -120,14 +123,16 @@ const styles = StyleSheet.create({
     input: {
         marginTop: 10,
         height: 50,
-        borderColor: '#e1e1e1',
+        borderColor: 'white',
         borderWidth: 1,
-        borderStyle: 'solid'
+        borderStyle: 'solid',
+        backgroundColor: 'white'
     },
     btnSubmit: {
         padding: 10,
-        backgroundColor: '#FFEF36',
-        marginVertical: 10
+        backgroundColor: '#183152',
+        marginVertical: 10,
+        fontWeight:'600'
     },
     textoSubmit: {
         color: '#FFF',
