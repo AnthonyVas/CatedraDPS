@@ -48,6 +48,7 @@ const bookAppointment = () => {
         <>
             <ScrollView style={styles.formulario}>
                 <View>
+                    <Text style={styles.label}>Doctor:</Text>
                     <Picker
                         selectedValue={dentist}
                         onValueChange={(itemValue, itemIndex) =>
