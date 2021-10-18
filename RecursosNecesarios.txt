@@ -11,3 +11,8 @@ react-native-paper
 @react-navigation/native-stack
 @react-navigation/native
 react-native-vector-icons
+
+Jehovani
+npm install @react-native-picker/picker
+npm i react-native-modal-datetime-picker
+@react-native-community/datetimepicker
