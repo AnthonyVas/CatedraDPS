@@ -14,7 +14,6 @@ const Drawer = createDrawerNavigator();
 
 export default function homeTest() {
   return (
-    <NavigationContainer>
       <Drawer.Navigator 
       initialRouteName="Home" 
       headerMode="screen"
@@ -26,7 +25,7 @@ export default function homeTest() {
         <Drawer.Screen name="Agendar Cita" component={bookAppointment} />
 
       </Drawer.Navigator>
-    </NavigationContainer>
+  
   );
 }
 

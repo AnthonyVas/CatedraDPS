@@ -11,6 +11,7 @@ import {
 import { NavigationContainer } from '@react-navigation/native';
 import homeTest from './homeTest';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import {homeTest1 } from  '../../screen/homeTest'
 
 
 // import * as Google from 'expo-google-sign-in';
@@ -49,7 +50,7 @@ const login = ({ navigation }) => {
 
                 <TouchableOpacity
                     style={styles.btnInicioSesion}
-                // onPress={() => { }}
+                 onPress={() => {navigation.navigate('homeTest1') }}
                 >
                     <Text style={styles.btnTextInicioSesion}>Iniciar de sesion</Text>
                 </TouchableOpacity>
