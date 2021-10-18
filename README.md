@@ -6,6 +6,8 @@ Anthony Alexander Vásquez Iraheta-VI180187
 Rodrigo Ernesto Hernández Rivas-HR132106  
 Williams Ernesto Amaya Moreno-AM180695  
 Giovanny Misael Abrego Herrera-AH132090  
+#Video:
+https://drive.google.com/file/d/1CjdJXREnMCwaP2RFoxxI9ERYm1sSMbOC/view?usp=sharing
 # MockUps
 https://drive.google.com/drive/folders/1cCWE_tc5N1lpoVDUqj-a2tJZpDmg9uRb?usp=sharing
 # Trello
