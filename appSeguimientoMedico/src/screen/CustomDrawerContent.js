@@ -1,6 +1,10 @@
 import React, {uselayoutEffect, useState} from 'react';
 import { View, TouchableOpacity,StyleSheet,Text, Image} from 'react-native';
 
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import { NavigationContainer } from '@react-navigation/native';
+const Stack = createNativeStackNavigator();
+
 import {
   GoogleSignin,
   statusCodes,
@@ -15,6 +19,10 @@ import {
 //assets
 import logout from "../images/logout.png"
 import userPic from "../images/user1.png"
+import login from '../screens/login/login';
+
+//logut
+
 
 
   
@@ -28,7 +36,6 @@ import userPic from "../images/user1.png"
         </View> 
        
         <DrawerContentScrollView {...props}>
-          
           <DrawerItemList 
           {...props}
           activeBackgroundColor="white"
@@ -41,32 +48,25 @@ import userPic from "../images/user1.png"
           label="Sing-Out"
           labelStyle={{}}
           style={styles.inNout}
-          icon = {() =>(
-            <Image source={logout} style={{width:20, height:20, tintColor: "black"}}
+          icon = {() =>(<Image source={logout} style={{width:20, height:20, tintColor: "black"}}/>)}
+          onPress={() => {
+            console.log("onpress");
+            GoogleSignin.configure({androidClientId: '801356307136-dfdj7hnung2cvdh5ji9svmsikmq6mb45.apps.googleusercontent.com'});
+            signOut()
+            async function signOut() {
+              try {
+                  await GoogleSignin.signOut();
+                  setTimeout(() => props.navigation.navigate('login'), 1000);
+              } catch (error) {
+                  console.error(error);
+              }
+            };
+            }
           
-            onPress={() => {
-              GoogleSignin.configure({
-                  androidClientId: '801356307136-dfdj7hnung2cvdh5ji9svmsikmq6mb45.apps.googleusercontent.com',
-                  // iosClientId: 'ADD_YOUR_iOS_CLIENT_ID_HERE',
-              });
-              //    async function getCurrentUser()  {
-              //         const currentUser = await GoogleSignin.clearCachedAccessToken();
-              //         this.setState({ currentUser });
-              //       };
-              //       getCurrentUser()
-              async function signOut() {
-                  try {
-                      await GoogleSignin.signOut();
-                      // this.setState({ user: null }); // Remember to remove the user from your app's state as well
-                      setTimeout(() => navigation.navigate('login'), 1000);
-                  } catch (error) {
-                      console.error(error);
-                  }
-              };
-              signOut()
-          }}
-          />
-          )}
+          
+          } 
+          
+          
 
         />
       </View>

@@ -54,21 +54,16 @@ const login = ({ navigation }) => {
                 >
                     <Text style={styles.btnTextInicioSesion}>Iniciar de sesion</Text>
                 </TouchableOpacity>
-
-
-
                 <View style={styles.lineContainer}>
                     <Divider height={15} style={styles.line} />
                 </View>
-
                 <Icon.Button
                     style={styles.btnGoogle}
                     title={'Sign in with Google'}
                     name="google"
                     onPress={() => {
                         GoogleSignin.configure({
-                            androidClientId: '801356307136-dfdj7hnung2cvdh5ji9svmsikmq6mb45.apps.googleusercontent.com',
-                            // iosClientId: 'ADD_YOUR_iOS_CLIENT_ID_HERE',
+                            androidClientId: '801356307136-dfdj7hnung2cvdh5ji9svmsikmq6mb45.apps.googleusercontent.com'
                         });
                         async function signIn() {
                             try {
@@ -90,7 +85,7 @@ const login = ({ navigation }) => {
                                     alert("Something unknown went wrong with Google sign in. " + error.message);
                                 }
                             }
-                            // const 
+                          
                         }
                         signIn()
                         // signOut = async () => {
