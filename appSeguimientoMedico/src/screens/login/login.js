@@ -61,6 +61,7 @@ const login = ({ navigation }) => {
                     style={styles.btnGoogle}
                     title={'Sign in with Google'}
                     name="google"
+                    // onPress={() => navigation.navigate('homeTest')}
                     onPress={() => {
                         GoogleSignin.configure({
                             androidClientId: '801356307136-dfdj7hnung2cvdh5ji9svmsikmq6mb45.apps.googleusercontent.com'
@@ -71,7 +72,7 @@ const login = ({ navigation }) => {
                                 const userInfo = await GoogleSignin.signIn();
                                 //If login is successful you'll get user info object in userInfo below I'm just printing it to console. You can store this object in a usestate or use it as you like user is logged in.
                                 setTimeout(() => navigation.navigate('homeTest', { correo: userInfo.user.email, nombre: userInfo.user.name }), 1000);
-                                // onPress={() => navigation.navigate('homeTest')}
+                                // 
 
                                 console.log(userInfo)
                             } catch (error) {
@@ -108,12 +109,6 @@ const login = ({ navigation }) => {
                 </View>
 
             </View>
-
-
-
-
-
-
         </View >
     );
 }
