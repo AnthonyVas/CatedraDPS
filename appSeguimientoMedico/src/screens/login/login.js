@@ -1,4 +1,6 @@
 import * as React from 'react';
+import {useState} from 'react';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 import { View, Text, StyleSheet, Image, Button, TouchableOpacity } from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import { Input, Divider } from 'react-native-elements';
@@ -12,6 +14,14 @@ import { NavigationContainer } from '@react-navigation/native';
 import homeTest from './homeTest';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import {homeTest1 } from  '../../screen/homeTest'
+
+const storeData = async (value) => {
+    try {
+      await AsyncStorage.setItem('@storage_Key', value)
+    } catch (e) {
+      // saving error
+    }
+  }
 
 
 // import * as Google from 'expo-google-sign-in';
@@ -75,7 +85,8 @@ const login = ({ navigation }) => {
                                 await GoogleSignin.hasPlayServices();
                                 const userInfo = await GoogleSignin.signIn();
                                 //If login is successful you'll get user info object in userInfo below I'm just printing it to console. You can store this object in a usestate or use it as you like user is logged in.
-                                setTimeout(() => navigation.navigate('homeTest', { correo: userInfo.user.email, nombre: userInfo.user.name }), 1000);
+                                // storeData(userInfo.user.email);
+                                setTimeout(() => navigation.navigate('homeTest1', { correo: userInfo.user.email, nombre: userInfo.user.name }), 1000);
                                 // onPress={() => navigation.navigate('homeTest')}
 
                                 console.log(userInfo)

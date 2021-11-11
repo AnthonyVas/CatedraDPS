@@ -1,6 +1,18 @@
 import React from 'react';
 import { Text, View } from 'react-native';
 
+
+// const getData = async () => {
+//   try {
+//     const value = await AsyncStorage.getItem('@storage_Key')
+//     if(value !== null) {
+//       // value previously stored
+//     }
+//   } catch(e) {
+//     // error reading value
+//   }
+// }
+
 const mainTabScreen = () => {
   return (
     <View
@@ -10,7 +22,7 @@ const mainTabScreen = () => {
         alignItems: "center",
         backgroundColor: "#E1E6FA"
       }}>
-      <Text>Pantalla Principal</Text>
+      <Text>texto, variable:</Text>
     </View>
   )
 }
