@@ -27,6 +27,7 @@ import login from '../screens/login/login';
 
   
   export default function CustomDrawerContent(props) {
+    
     return (
       <View style={styles.container}> 
 

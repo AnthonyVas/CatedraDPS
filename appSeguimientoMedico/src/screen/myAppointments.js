@@ -1,66 +1,78 @@
 
-import React, { useState } from "react";
+import React, { useState, useEffect  } from "react";
 import { FlatList, SafeAreaView, StatusBar, StyleSheet, Text, TouchableOpacity,View,Image} from "react-native";
 
-const DATA = [
-  {
-    id: "1",
-    date: "24/10/21",
-    appointmentTime: "9:45 AM",
-    doctor: "Fernando Gomez",
-    address: "Col Médica, 27 Avenida Nte. No 1331",
-    mail:"contactme@mail.com",
-    phoneNumber:"7777-5656",
-    procedure: "Limpieza Dental"
-  },
-  {
-    id: "2",
-    date: "24/10/21",
-    appointmentTime: "9:45 AM",
-    doctor: "Fernando Gomez",
-    address: "Col Médica, 27 Avenida Nte. No 1331",
-    mail:"contactme@mail.com",
-    phoneNumber:"7777-5656",
-    procedure: "Limpieza Dental"
-  },
-  {
-    id: "3",
-    date: "24/10/21",
-    appointmentTime: "9:45 AM",
-    doctor: "Fernando Gomez",
-    address: "Col Médica, 27 Avenida Nte. No 1331",
-    mail:"contactme@mail.com",
-    phoneNumber:"7777-5656",
-    procedure: "Limpieza Dental"
-  },
-  {
-    id: "4",
-    date: "24/10/21",
-    appointmentTime: "9:45 AM",
-    doctor: "Fernando Gomez",
-    address: "Col Médica, 27 Avenida Nte. No 1331",
-    mail:"contactme@mail.com",
-    phoneNumber:"7777-5656",
-    procedure: "Limpieza Dental"
-  },
+// const [DATA,setDATA] = useState([]) ;
 
-  {
-    id: "5",
-    date: "24/10/21",
-    appointmentTime: "9:45 AM",
-    doctor: "Fernando Gomez",
-    address: "Col Médica, 27 Avenida Nte. No 1331",
-    mail:"contactme@mail.com",
-    phoneNumber:"7777-5656",
-    procedure: "Limpieza Dental"
-  },
-];
 
-// new Date().toLocaleString
-// //fechado
-// const today = new Date()
-// const tomorrow = new Date(today)
-// tomorrow.setDate(tomorrow.getDate() + 1)
+
+
+// const DATA = [
+//   {
+//     id: "1",
+//     date: "24/10/21",
+//     appointmentTime: "9:45 AM",
+//     doctor: "Fernando Gomez",
+//     address: "Col Médica, 27 Avenida Nte. No 1331",
+//     mail:"contactme@mail.com",
+//     phoneNumber:"7777-5656",
+//     procedure: "Limpieza Dental"
+//   },
+//   {
+//     id: "2",
+//     date: "24/10/21",
+//     appointmentTime: "9:45 AM",
+//     doctor: "Fernando Gomez",
+//     address: "Col Médica, 27 Avenida Nte. No 1331",
+//     mail:"contactme@mail.com",
+//     phoneNumber:"7777-5656",
+//     procedure: "Limpieza Dental"
+//   },
+//   {
+//     id: "3",
+//     date: "24/10/21",
+//     appointmentTime: "9:45 AM",
+//     doctor: "Fernando Gomez",
+//     address: "Col Médica, 27 Avenida Nte. No 1331",
+//     mail:"contactme@mail.com",
+//     phoneNumber:"7777-5656",
+//     procedure: "Limpieza Dental"
+//   },
+//   {
+//     id: "4",
+//     date: "24/10/21",
+//     appointmentTime: "9:45 AM",
+//     doctor: "Fernando Gomez",
+//     address: "Col Médica, 27 Avenida Nte. No 1331",
+//     mail:"contactme@mail.com",
+//     phoneNumber:"7777-5656",
+//     procedure: "Limpieza Dental"
+//   },
+
+//   {
+//     id: "5",
+//     date: "24/10/21",
+//     appointmentTime: "9:45 AM",
+//     doctor: "Fernando Gomez",
+//     address: "Col Médica, 27 Avenida Nte. No 1331",
+//     mail:"contactme@mail.com",
+//     phoneNumber:"7777-5656",
+//     procedure: "Limpieza Dental"
+//   },
+// ];
+
+const getArticlesFromApi = async (correo) => {
+  let response = await fetch(
+    `https://proyectdps.000webhostapp.com/apislim3/cita/pruebasdps12@gmail.com`
+  );
+  let json  = await response.json();
+  console.log(json)
+  return json;
+};
+
+// useEffect(() => {
+//   getArticlesFromApi();
+// }, []);
 
 
 const Item = ({ item, onPress, backgroundColor, textColor }) => (
@@ -86,22 +98,27 @@ const Item = ({ item, onPress, backgroundColor, textColor }) => (
 
 
 
-const myAppointments = () => {
+const myAppointments = ({route}) => {
+
+  const {correo} = route.params;
+  console.log("correo citas agendadas:", correo)
+
+  const DATA = getArticlesFromApi(correo);
+
   const [selectedId, setSelectedId] = useState(null);
+    const renderItem = ({ item }) => {
+      const backgroundColor = item.id === selectedId ? "#3d7ab1" : "#ABC8E2";
+      const color = item.id === selectedId ? 'white' : 'black';
 
-  const renderItem = ({ item }) => {
-    const backgroundColor = item.id === selectedId ? "#3d7ab1" : "#ABC8E2";
-    const color = item.id === selectedId ? 'white' : 'black';
-
-    return (
-      <Item
-        item={item}
-        onPress={() => setSelectedId(item.id)}
-        backgroundColor={{ backgroundColor }}
-        textColor={{ color }}
-      />
-    );
-  };
+      return (
+        <Item
+          item={item}
+          onPress={() => setSelectedId(item.id)}
+          backgroundColor={{ backgroundColor }}
+          textColor={{ color }}
+        />
+      );
+    };
 
   return (
     <SafeAreaView style={styles.container}>

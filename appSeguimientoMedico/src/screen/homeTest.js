@@ -14,18 +14,21 @@ import WebMaps from './webMaps';
 
 const Drawer = createDrawerNavigator();
 
-export default function homeTest() {
+export default function homeTest({navigation, route}) {
+  const {correo} = route.params;
+  console.log("correo:", correo)
+
   return (
       <Drawer.Navigator 
       initialRouteName="Home" 
       headerMode="screen"
       drawerContent={(props)=> <CustomDrawerContent {...props}/>}
       >
-        <Drawer.Screen name="Home" component={mainTabScreen} />
-        <Drawer.Screen name="Doctores" component={dentisList} />
-        <Drawer.Screen name="Mis Citas" component={myAppointments} />
-        <Drawer.Screen name="Agendar Cita" component={bookAppointment} />
-        <Drawer.Screen name="Clinicas" component={ClinicsList}  />
+        <Drawer.Screen name="Home" initialParams={{ correo }} component={mainTabScreen} />
+        <Drawer.Screen name="Doctores"  initialParams={{ correo }} component={dentisList} />
+        <Drawer.Screen name="Mis Citas" initialParams={{ correo }}  component={myAppointments} />
+        <Drawer.Screen name="Agendar Cita" initialParams={{ correo }}  component={bookAppointment} />
+        <Drawer.Screen name="Clinicas"  initialParams={{ correo }}  component={ClinicsList}  />
       </Drawer.Navigator>
   
   );

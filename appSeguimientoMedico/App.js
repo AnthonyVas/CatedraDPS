@@ -9,6 +9,7 @@ import homeTest1 from './src/screen/homeTest';
 import login from './src/screens/login/login';
 import WebMaps from "./src/screen/webMaps";
 import ClinicsLists from "./src/screen/ClinincsList";
+import mainTabScreen from "./src/screen/mainTabScreen";
 
 export default function App() {
   //Hide Splash screen on app load
@@ -25,6 +26,9 @@ export default function App() {
          options={{ title: 'Overview', headerShown: false }} />
 
         <Stack.Screen name="WebMaps" component={WebMaps}
+         options={{ title: 'Overview', headerShown: false }} />
+       
+        <Stack.Screen name="maintabScreen" component={mainTabScreen}
          options={{ title: 'Overview', headerShown: false }} />
 
         <Stack.Screen

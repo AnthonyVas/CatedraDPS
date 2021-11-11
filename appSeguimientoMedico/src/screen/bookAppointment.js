@@ -5,6 +5,7 @@ import { Picker } from '@react-native-picker/picker';
 //import shortid from 'shortid'
 
 const bookAppointment = () => {
+    
     //Variables cita
     const [dentist, saveDentist] = useState();
     const [date, saveDate] = useState('');

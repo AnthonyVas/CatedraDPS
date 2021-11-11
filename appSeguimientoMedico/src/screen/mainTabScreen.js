@@ -1,19 +1,9 @@
 import React from 'react';
 import { Text, View } from 'react-native';
 
-
-// const getData = async () => {
-//   try {
-//     const value = await AsyncStorage.getItem('@storage_Key')
-//     if(value !== null) {
-//       // value previously stored
-//     }
-//   } catch(e) {
-//     // error reading value
-//   }
-// }
-
-const mainTabScreen = () => {
+const mainTabScreen = ({route}) => {
+  const {correo} = route.params;
+  console.log("correo pantalla principal:", correo)
   return (
     <View
       style={{
@@ -22,7 +12,7 @@ const mainTabScreen = () => {
         alignItems: "center",
         backgroundColor: "#E1E6FA"
       }}>
-      <Text>texto, variable:</Text>
+      <Text>texto, variable:{correo}</Text>
     </View>
   )
 }

@@ -81,7 +81,7 @@ const login = ({ navigation }) => {
                                 await GoogleSignin.hasPlayServices();
                                 const userInfo = await GoogleSignin.signIn();
                                 //If login is successful you'll get user info object in userInfo below I'm just printing it to console. You can store this object in a usestate or use it as you like user is logged in.
-                                setTimeout(() => navigation.navigate('homeTest', { correo: userInfo.user.email, nombre: userInfo.user.name }), 1000);
+                                setTimeout(() => navigation.navigate('homeTest1', { correo: userInfo.user.email, nombre: userInfo.user.name }), 1000);
                                 // 
 
                                 console.log(userInfo)
