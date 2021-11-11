@@ -1,6 +1,8 @@
-import React, { useState } from "react";
+import React from "react";
 import {View, StyleSheet, Text, TouchableOpacity,Image} from "react-native";
 import DataFetcDentist from './DataFetchDentist'
+
+
 // const DATA = [
 //   {
 //     id: "1",
@@ -62,12 +64,7 @@ import DataFetcDentist from './DataFetchDentist'
 
 const dentistList = () => {
   return (
-    <View
-      style={{
-        flex: 1,
-        backgroundColor: "#E1E6FA"
-      }}>
-      <Text>Lista de Especialistas</Text>
+    <View>
       <DataFetcDentist/>
     </View>
   )
@@ -77,19 +74,10 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     marginTop:0,
-    backgroundColor:'#E1E6FA'
+    backgroundColor:'#white'
+    // backgroundColor:'#E1E6FA'
   },
-  item: {
-    padding: 5,
-    marginVertical: 8,
-    marginHorizontal: 16,
-  },
-  name: {
-    fontSize: 20,
-  },
-  info: {
-    fontSize: 13,
-  }
+
   
 });
 
