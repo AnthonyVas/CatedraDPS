@@ -1,10 +1,6 @@
 import React from 'react';
 import {StyleSheet, Text, View} from 'react-native';
 import {TouchableHighlight} from 'react-native-gesture-handler';
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import { NavigationContainer } from '@react-navigation/native';
-import WebMaps from './webMaps'
-const Stack = createNativeStackNavigator();
 
 const ClinicsLists = ({navigation}) => {
     return (
