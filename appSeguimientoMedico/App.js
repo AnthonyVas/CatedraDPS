@@ -7,32 +7,33 @@ const Stack = createNativeStackNavigator();
 import homeTest from './src/screens/login/homeTest';
 import homeTest1 from './src/screen/homeTest';
 import login from './src/screens/login/login';
+import WebMaps from "./src/screen/webMaps";
+import ClinicsLists from "./src/screen/ClinincsList";
+
 export default function App() {
-  //Hide Splash screen on app load.
+  //Hide Splash screen on app load
   React.useEffect(() => {
     SplashScreen.hide();
   });
   return(
     <NavigationContainer>
     <Stack.Navigator initialRouteName="login">
-        {/* <Stack.Screen name="series" component={series}
-        options={{
-            title: 'Series',
-            tabBarIcon: ({ color, size }) => (
-                <MaterialCommunityIcons name="bell" color={color} size={size} />
-            ),
-        }} /> */}
         <Stack.Screen name="homeTest1" component={homeTest1}
          options={{ title: 'Overview', headerShown: false }} />
-        {/* <Stack.Screen name="homeTest" component={homeTest} /> */}
+
+        <Stack.Screen name="cliniclist" component={ClinicsLists}
+         options={{ title: 'Overview', headerShown: false }} />
+
+        <Stack.Screen name="WebMaps" component={WebMaps}
+         options={{ title: 'Overview', headerShown: false }} />
+
         <Stack.Screen
          name="login"
          component={login} 
          options={{ title: 'Overview', headerShown: false }}
          />
     </Stack.Navigator>
-</NavigationContainer>
-    // <Login></Login>
+</NavigationContainer> 
   );
  
 }

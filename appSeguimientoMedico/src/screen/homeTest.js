@@ -9,6 +9,8 @@ import CustomDrawerContent from './CustomDrawerContent'
 import dentisList from './dentisList';
 import myAppointments from './myAppointments';
 import bookAppointment from './bookAppointment';
+import ClinicsList from './ClinincsList'
+import WebMaps from './webMaps';
 
 const Drawer = createDrawerNavigator();
 
@@ -23,7 +25,7 @@ export default function homeTest() {
         <Drawer.Screen name="Doctores" component={dentisList} />
         <Drawer.Screen name="Mis Citas" component={myAppointments} />
         <Drawer.Screen name="Agendar Cita" component={bookAppointment} />
-
+        <Drawer.Screen name="Clinicas" component={ClinicsList}  />
       </Drawer.Navigator>
   
   );
