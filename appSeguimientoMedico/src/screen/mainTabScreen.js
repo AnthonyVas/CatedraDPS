@@ -13,7 +13,7 @@ const mainTabScreen = ({route}) => {
   
     const users = [
       {
-        name: 'brynn',
+        name: 'Christian Fonseca',
         avatar: 'https://s3.amazonaws.com/uifaces/faces/twitter/brynn/128.jpg',
       },
     ];
@@ -47,13 +47,13 @@ const mainTabScreen = ({route}) => {
                       </Text>
                       <Text style={styles.name}>
                         <Text style={styles.nameParent}>Correo:</Text>{' '}
-                        {'big@gmail.com'}
+                        {'pruebasdps12@gmail.com'}
                       </Text>
                     </View>
                     <View style={styles.mainChildTwo}>
                       <Text style={styles.name}>
-                        <Text style={styles.nameParent}>Sintomas: </Text> Dolor de
-                        cabeza, irritacion trocopica, mocos en exceso
+                        <Text style={styles.nameParent}>Sintomas: </Text> Dolor en los dientes molares
+                        , encias inflamadas, mal aliento
                       </Text>
                     </View>
                   </View>
@@ -85,8 +85,8 @@ const mainTabScreen = ({route}) => {
           <View style={styles.mainInfoOther}>
             <Card containerStyle={{backgroundColor:'#ABC8E2'}}>
               <Card.Title>
-                Consulta general
-                {'\n'}9:00 AM
+                Ortdoncia Invisible
+                {'\n'}11:10 AM
               </Card.Title>
               <Card.Divider />
               {users.map((u, i) => {
@@ -109,13 +109,12 @@ const mainTabScreen = ({route}) => {
                         </Text>
                         <Text style={styles.name}>
                           <Text style={styles.nameParent}>Correo:</Text>{' '}
-                          {'big@gmail.com'}
+                          {'pruebasdps12@gmail.com'}
                         </Text>
                       </View>
                       <View style={styles.mainChildTwo}>
                         <Text style={styles.name}>
-                          <Text style={styles.nameParent}>Sintomas: </Text> Dolor
-                          de cabeza, irritacion trocopica, mocos en exceso
+                          <Text style={styles.nameParent}>Sintomas: </Text> Dolor en las muelas de juicio
                         </Text>
                       </View>
                     </View>
@@ -127,8 +126,8 @@ const mainTabScreen = ({route}) => {
           <View style={styles.mainInfoOther}>
             <Card containerStyle={{backgroundColor:'#ABC8E2'}}>
               <Card.Title>
-                Consulta general
-                {'\n'}9:00 AM
+                Blanqueamiento Dental 
+                {'\n'}11:10 AM
               </Card.Title>
               <Card.Divider style={{backgroundColor:'black'}} />
               {users.map((u, i) => {
@@ -151,13 +150,12 @@ const mainTabScreen = ({route}) => {
                         </Text>
                         <Text style={styles.name}>
                           <Text style={styles.nameParent}>Correo:</Text>{' '}
-                          {'big@gmail.com'}
+                          {'pruebasdps12@gmail.com'}
                         </Text>
                       </View>
                       <View style={styles.mainChildTwo}>
                         <Text style={styles.name}>
-                          <Text style={styles.nameParent}>Sintomas: </Text> Dolor
-                          de cabeza, irritacion trocopica, mocos en exceso
+                          <Text style={styles.nameParent}>Sintomas: </Text>Dientes desviados
                         </Text>
                       </View>
                     </View>

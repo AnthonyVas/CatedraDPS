@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { createDrawerNavigator, DrawerContent } from '@react-navigation/drawer';
+import { createDrawerNavigator } from '@react-navigation/drawer';
 import mainTabScreen from './mainTabScreen';
 
 //Components
