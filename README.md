@@ -2,10 +2,10 @@
 Creado para alojar el proyecto de la catedra de la materia Diseño y Programacion de Software Multiplataforma.
 # Integrantes
 Grupo: **02T**  
-Anthony Alexander Vásquez Iraheta-VI180187  
-Rodrigo Ernesto Hernández Rivas-HR132106  
-Williams Ernesto Amaya Moreno-AM180695  
-Giovanny Misael Abrego Herrera-AH132090  
+Anthony Alexander Vásquez Iraheta- VI180187  
+Rodrigo Ernesto Hernández Rivas- HR132106  
+Williams Ernesto Amaya Moreno- AM180695  
+Giovanny Misael Abrego Herrera- AH132090  
 #Video:
 https://drive.google.com/file/d/1CjdJXREnMCwaP2RFoxxI9ERYm1sSMbOC/view?usp=sharing
 # MockUps
