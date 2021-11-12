@@ -1,5 +1,5 @@
 import React,{useState, useEffect} from 'react'
-import { View,Text} from 'react-native';
+import { View,Text,StyleSheet,SafeAreaView, TouchableOpacity} from 'react-native';
 import axios from 'axios'
 
 function DataFetchCitas({correo}) {
@@ -20,14 +20,77 @@ function DataFetchCitas({correo}) {
     },[])
 
     return (
-        <View>
+        
+        <SafeAreaView style={styles.container}>
 
-            <Text>API response</Text>
+        
                 {
-                    posts.map(post =>(<Text key={post.id} >{post.doctor},{post.paciente}</Text>) )
+                    posts.map(post =>(
+                        
+                        <View style={{marginVertical: 8}}>
+                            <TouchableOpacity  style={{backgroundColor:'white'}}>
+                                <View style={{backgroundColor:'#375D81' ,mmarginRight:0, padding:0}}>
+                                    <Text style={[styles.getDate]}>{post.date}</Text>
+                                </View>
+                                <View style={styles.dateContainer}>
+                                    <Text style={[styles.dateTime]} >{post.appointmentTime}</Text>
+                                    <View style={styles.dateInfoContainer}>
+                                    <Text style={[styles.dateInfoText]}>{post.doctor} </Text>
+                                    <Text style={[styles.dateInfoText]}>{post.procedure}</Text>
+                                    <Text style={[styles.dateInfoText]}>{post.address}</Text>
+                                    <Text style={[styles.dateInfoText]}>{post.mail}</Text>
+                                    <Text style={[styles.dateInfoText]}>{post.phoneNumber}</Text>
+                                    </View>
+                                </View>
+                            </TouchableOpacity>
+                        </View>    
+                                       
+                    ))  
                 }
-        </View>
+        </SafeAreaView>
     )
 }
 
 export default DataFetchCitas
+
+const styles = StyleSheet.create({
+    container: {
+      flex: 1,
+      marginTop: 0,
+    
+    },
+    item: {
+      marginVertical: 8,
+      marginHorizontal: 16,
+    },
+    title: {
+      fontSize: 32,
+    },
+    dateTime:{
+      justifyContent: 'center',
+      marginTop:40
+  
+    },
+    dateContainer: {
+      padding: 10,
+      flexDirection:'row',
+      justifyContent:'space-between',
+    },
+    getDate: {
+      padding:5,
+      fontSize:13,
+      alignItems:'center',
+      marginLeft:'6%',
+      color:'white'
+    },
+    dateInfoContainer: {
+      padding:5,
+      fontSize:13,
+      marginLeft:'6%',
+    },
+    dateInfoText: {
+      fontSize:14,
+      textAlign:"left",
+    },
+  });
+  
