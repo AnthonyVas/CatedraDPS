@@ -1,15 +1,14 @@
 import React from "react";
-import Login  from "./src/screens/login/login";
 import SplashScreen from 'react-native-splash-screen'
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { NavigationContainer } from '@react-navigation/native';
 const Stack = createNativeStackNavigator();
-import homeTest from './src/screens/login/homeTest';
 import homeTest1 from './src/screen/homeTest';
 import login from './src/screens/login/login';
 import WebMaps from "./src/screen/webMaps";
 import ClinicsLists from "./src/screen/ClinincsList";
 import mainTabScreen from "./src/screen/mainTabScreen";
+import customDrawerScreen from './src/screen/CustomDrawerContent'
 
 export default function App() {
   //Hide Splash screen on app load
@@ -29,6 +28,9 @@ export default function App() {
          options={{ title: 'Overview', headerShown: false }} />
        
         <Stack.Screen name="maintabScreen" component={mainTabScreen}
+         options={{ title: 'Overview', headerShown: false }} />
+       
+        <Stack.Screen name="customDrawerScreen" component={customDrawerScreen}
          options={{ title: 'Overview', headerShown: false }} />
 
         <Stack.Screen

@@ -25,8 +25,6 @@ function DataFetchCitas({correo}) {
     return (
         
         <View style={styles.container}>
-
-        
                 {
                     posts.map(post =>(
                         
@@ -35,7 +33,7 @@ function DataFetchCitas({correo}) {
                                 <View >
                                     <Text style={[styles.name]}>{post.nombres} {post.apellidos}</Text>
                                     <Text style={[styles.info]}>{post.especialidad}</Text>
-                                    <Text style={[styles.info]}>{post.direccion}</Text>
+                                    <Text style={[styles.info]}>{post.address}</Text>
                                     <Text style={[styles.info]}>Contacto:</Text>
                                     <Text style={[styles.info]}>{post.correo}</Text>
                                     <Text style={[styles.info]}>{post.telefono}</Text>

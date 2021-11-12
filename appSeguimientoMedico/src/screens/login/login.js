@@ -1,7 +1,7 @@
 import * as React from 'react';
 import {useState} from 'react';
 import AsyncStorage from '@react-native-async-storage/async-storage';
-import { View, Text, StyleSheet, Image, Button, TouchableOpacity } from 'react-native';
+import { View, Text, StyleSheet, Image, Button, TouchableOpacity, Alert } from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import { Input, Divider } from 'react-native-elements';
 import { TextInput } from 'react-native-paper';
@@ -24,24 +24,41 @@ const storeData = async (value) => {
   }
 
 
+  const showAlert = () =>
+  Alert.alert(
+    "Credenciales Invalidas",
+    "Verefique la contraseña y/o el usuario e intente denuevo",
+    [
+      {
+        text: "Cancelar",
+        style: "cancel",
+      },
+    ],
+    {
+      cancelable: false, 
+    }
+  );
+
 // import * as Google from 'expo-google-sign-in';
 // console.log(Icon);
 const Stack = createNativeStackNavigator();
 
+
 const login = ({ navigation }) => {
     const [text, setText] = React.useState('');
-    return (
+    const [password, setPassword] = React.useState('');
 
+    return (
+        
         <View>
             <View style={styles.imageContainer} >
                 <Image
                     style={styles.image}
                     source={require('../../imgs/logosplash.png')}
                 >
-
                 </Image>
-
             </View>
+
             <View style={styles.container}>
                 <TextInput
                     label="Usuario/Correo"
@@ -50,8 +67,9 @@ const login = ({ navigation }) => {
                 />
                 <TextInput
                     label="Contraseña"
-                    value={text}
-                    onChangeText={text => setText(text)}
+                    value={password}
+                    secureTextEntry={true} 
+                    onChangeText={password => setPassword(password)}
                     style={styles.contra}
                 />
             </View>
@@ -60,7 +78,8 @@ const login = ({ navigation }) => {
 
                 <TouchableOpacity
                     style={styles.btnInicioSesion}
-                 onPress={() => {navigation.navigate('homeTest1') }}
+                 onPress={() =>
+                     {text=='pruebasdps12@gmail.com' && password=='12345' ? navigation.navigate('homeTest1', { correo:'pruebasdps12@gmail.com', nombre: 'christian Fonseca'}):showAlert()}} 
                 >
                     <Text style={styles.btnTextInicioSesion}>Iniciar de sesion</Text>
                 </TouchableOpacity>
@@ -71,7 +90,6 @@ const login = ({ navigation }) => {
                     style={styles.btnGoogle}
                     title={'Sign in with Google'}
                     name="google"
-                    // onPress={() => navigation.navigate('homeTest')}
                     onPress={() => {
                         GoogleSignin.configure({
                             androidClientId: '801356307136-dfdj7hnung2cvdh5ji9svmsikmq6mb45.apps.googleusercontent.com'
@@ -99,24 +117,11 @@ const login = ({ navigation }) => {
                           
                         }
                         signIn()
-                        // signOut = async () => {
-                        //     try {
-                        //       await GoogleSignin.signOut();
-                        //       this.setState({ user: null }); // Remember to remove the user from your app's state as well
-                        //     } catch (error) {
-                        //       console.error(error);
-                        //     }
-                        //   };
-                        //   signOut()
                     }}
                 >
                     Iniciar con Google
                 </Icon.Button>
-                <View style={styles.registrarseContainer}>
-                    <Text>
-                        ¿No tienes cuenta aun? Registrarme!
-                    </Text>
-                </View>
+               
 
             </View>
         </View >
@@ -134,13 +139,12 @@ const styles = StyleSheet.create({
     image: {
         width: '60%',
         height: '90%',
-        // backgroundColor: 'yellow',
+       
 
     },
     imageContainer: {
         marginTop: 50,
         height: '35%',
-        // backgroundColor: 'red',
         justifyContent: 'center',
         alignItems: 'center',
     },

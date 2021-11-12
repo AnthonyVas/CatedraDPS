@@ -1,5 +1,5 @@
 import React from 'react';
-import { Text, View } from 'react-native';
+import { Text, View,ScrollView} from 'react-native';
 import DataFetcCitas from './DataFetchCitas';
 
 const myAppointments = ({route}) => {
@@ -13,8 +13,9 @@ const myAppointments = ({route}) => {
         alignItems: "center",
         backgroundColor: "#E1E6FA"
       }}>
-      <Text>pruebas de la api:{correo}</Text>
-      <DataFetcCitas correo = {correo}/>
+      <ScrollView>
+        <DataFetcCitas correo = {correo}/>
+      </ScrollView>
     </View>
   )
 }
